@@ -1,0 +1,49 @@
+# Cursor Rules for Developing Freqtrade/FreqAI Strategy
+
+# 1. File and Folder Structure
+- Ensure all files follow Python naming conventions (snake_case for filenames and variables).
+- Place the main strategy in `strategy.py`.
+- Place configuration files (e.g., `config.json`) in a `/config/` folder.
+- All machine learning model files and training data must be stored in a `/models/` folder.
+
+# 2. Import Statements
+- Always import necessary libraries at the top of your file.
+- Use `freqtrade` and `freqai` related imports first, followed by custom utility imports.
+- Avoid unnecessary or unused imports.
+
+# 3. Linting and Code Formatting
+- Follow PEP8 guidelines for Python code.
+- Use 4 spaces for indentation.
+- Keep line length under 80 characters when possible.
+- Always include a blank line at the end of each file.
+
+# 4. Variable and Function Naming
+- Use clear and descriptive names for all variables, functions, and classes.
+- Follow snake_case for variables and function names.
+- Use PascalCase for class names (e.g., `MyFreqAIStrategy`).
+
+# 5. Comments and Documentation
+- All functions must include a docstring explaining their purpose.
+- Provide comments for non-trivial blocks of code or mathematical computations.
+- Use TODO or FIXME for future work or known issues.
+
+# 6. Error Handling
+- Implement proper error handling using `try/except` blocks.
+- Log any significant errors using Freqtrade’s logger or a custom logging system.
+
+# 7. Testing and Backtesting
+- Include unit tests for critical functions related to indicator calculations and model predictions.
+- Ensure backtesting is thoroughly documented, and all results are stored in a `/backtests/` folder for review.
+
+# 8. Machine Learning Best Practices
+- When creating machine learning models with FreqAI, ensure all feature engineering is done cleanly and efficiently.
+- Keep the training and prediction logic separated into distinct functions.
+- Always save trained models to disk in the appropriate `/models/` folder to handle potential crashes.
+
+# 9. Version Control
+- Use Git for version control, and commit frequently.
+- Ignore large datasets, API keys, and model files in `.gitignore`.
+
+# 10. Security and API Keys
+- API keys and sensitive credentials must not be hard-coded in the codebase.
+- Use environment variables or encrypted storage for managing keys.
